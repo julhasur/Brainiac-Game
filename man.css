@@ -1,49 +1,81 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    gap: 10px;
-    width: 90vw;
-    height: 90vh;
-  }
-  
-  .grid-item {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .info {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  #timer {
-    font-size: 24px;
-    color: red;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display:grid ;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.game-container {
+  display:grid;
+  flex-direction: column;
+  align-items: center;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 10px;
+  width: 90vw;
+  height: 90vh;
+}
+
+.grid-item {
+  width: 100px;
+  height: 140px;
+  perspective: 1000px;
+}
+
+.flip-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  position: relative;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 2rem;
+}
+
+.front {
+  background-color: #4caf50;
+  color: white;
+}
+
+.back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
+}
+
+.info {
+  margin-top: 25vh;
+ align-items: center;
+align-items: baseline;
+margin-left: 50%;
+}
+
+#timer {
+  font-size: 24px;
+  color: red;
+}
