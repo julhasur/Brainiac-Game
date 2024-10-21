@@ -17,7 +17,7 @@ pictures.sort(() => 0.5 - Math.random()); // Shuffle the pictures
 
 // Create grid items
 // Create grid items
-for (let i = 0; i < 35; i++) {
+for (let i = 0; i < 30; i++) {
   let div = document.createElement("div");
   div.classList.add("grid-item");
   div.dataset.id = i;
